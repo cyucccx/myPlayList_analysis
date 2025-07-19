@@ -6,9 +6,9 @@
 
 `J.csv` is my Japanese song playlist from Apple Music. I output it to `.txt`, and let AI turn into `.csv`.
 
-This dataset has `song`, `singer`, `playing times`, and so on information.
+This dataset contains information such as song titles, singers, and playing times.
 
-I want to analyze which singer is my favorite. What song I listen most times.
+I want to analyze which singers are my favorites, and which songs I listen to the most.
 
 ## Data Pre-Processing
 
@@ -48,6 +48,8 @@ top_artists = (
 sns.barplot(x=top_artists.values, y=top_artists.index, palette="viridis")
 ```
 
+![alt text](image.png)
+
 ### 2. Artist Song Count Distribution
 
 **Pseudocode:**
@@ -68,6 +70,8 @@ top_artists = artist_counts.head(20)
 sns.barplot(x='藝人', y='歌曲數量', data=plot_data, palette="viridis")
 ```
 
+![alt text](image-1.png)
+
 ### 3. Top 20 Most Played Songs
 
 **Pseudocode:**
@@ -87,6 +91,8 @@ top_songs = df.sort_values('播放次數', ascending=False).head(20)
 sns.barplot(x='播放次數', y='名稱', data=top_songs, palette="viridis")
 ```
 
+![alt text](image-2.png)
+
 ### 4. Song Year Distribution
 
 **Pseudocode:**
@@ -103,12 +109,13 @@ sns.barplot(x='播放次數', y='名稱', data=top_songs, palette="viridis")
 sns.histplot(df['年份'].dropna(), bins=20, kde=False, color='skyblue')
 ```
 
+![alt text](image-3.png)
+
 ## Key Findings
 
-- Analysis reveals listening patterns and preferences
-- Data visualization helps identify favorite artists and songs
-- Year distribution shows music preference across different time periods
-- Chinese font handling ensures proper display of artist and song names
+- The most played artist is **藤井風**.
+- The most listened-to song is **"Michi Teyu Ku (Overflowing)"** by **藤井風**, with 165 plays.
+- Most songs in this playlist are from 2018–2022, indicating a recent music preference.
 
 ## Files Structure
 
@@ -120,3 +127,4 @@ myMusic/
 └── .gitignore
 ```
 
+[GitHub Repository](https://github.com/cyucccx/myPlayList_analysis.git)
